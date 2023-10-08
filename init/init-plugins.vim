@@ -16,7 +16,7 @@
 if !exists('g:bundle_group')
 	let g:bundle_group = ['basic', 'tags', 'enhanced', 'filetypes', 'textobj']
 	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc']
-	let g:bundle_group += ['leaderf']
+	let g:bundle_group += ['leaderf', 'input-method-control']
 endif
 
 
@@ -515,6 +515,15 @@ if index(g:bundle_group, 'leaderf') >= 0
 		" ALT+n 匹配 buffer
 		noremap <m-n> :CtrlPBuffer<cr>
 	endif
+endif
+
+
+"----------------------------------------------------------------------
+" vim-barbaric 中文输入法插件 
+"----------------------------------------------------------------------
+if index(g:bundle_group, 'input-method-control') >= 0
+	Plug 'rlue/vim-barbaric'
+	set ttimeoutlen=0
 endif
 
 
