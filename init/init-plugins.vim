@@ -16,7 +16,7 @@
 if !exists('g:bundle_group')
 	let g:bundle_group = ['basic', 'tags', 'enhanced', 'filetypes', 'textobj']
 	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc']
-	let g:bundle_group += ['leaderf', 'input-method-control']
+	let g:bundle_group += ['leaderf', 'input-method-control', 'markdown']
 endif
 
 
@@ -524,6 +524,14 @@ endif
 if index(g:bundle_group, 'input-method-control') >= 0
 	Plug 'rlue/vim-barbaric'
 	set ttimeoutlen=0
+endif
+
+"----------------------------------------------------------------------
+" markdown 编辑插件
+"----------------------------------------------------------------------
+if index(g:bundle_group, 'markdown') >= 0
+	Plug 'plasticboy/vim-markdown'
+	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 endif
 
 
